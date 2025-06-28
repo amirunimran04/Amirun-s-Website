@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ADW | Amirun's Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS & Font Awesome -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&family=Raleway&family=Quicksand&family=Ubuntu&family=Monoton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@400;600&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <style>
+    html, body { margin:0; display:flex; flex-direction:column; min-height:100vh; font-family:'Roboto', sans-serif; }
+    .content { flex:1; }
+    footer { text-align:center; background:#000; color:#fff; padding:16px 0; font-family:'Playfair Display', serif; }
+
+    h1, h2 { font-family:'Playfair Display', serif; margin:0; padding:8px 0; }
+    .menu-buttons a { font-family:'Monoton', cursive; }
+    .about-section p { font-family:'Raleway', sans-serif; line-height:1.5; }
+    .hobby-section p { font-family:'Quicksand', sans-serif; }
+    .work-section, .work-section table { font-family:'Ubuntu', sans-serif; }
+    .education-section, .education-section table { font-family:'Ubuntu', sans-serif; }
+    .contact-section, .contact-section p, .contact-section a { font-family:'Roboto', sans-serif; }
+
+    .lightbox { display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); }
+    .lightbox-content { margin:auto; display:block; width:80%; max-width:700px; border-radius:10px; }
+    .lightbox-close { position:absolute; top:30px; right:35px; color:#fff; font-size:40px; cursor:pointer; }
+    .lightbox-close:hover { color:#ccc; }
+
+
+    .skills-section {
+    font-family: 'Roboto Slab', serif;
+    background: #f7f7f7;
+    padding: 3px;
+    text-align: center;
+    }
+
+    .skills-section h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: px;
+    display: inline-block;
+    position: relative;
+    }
+
+    .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    max-width: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    }
+
+    .skill-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+    }
+
+    .skill-card:hover {
+    transform: translateY(-10px);
+    }
+
+    .skill-icon {
+    font-size: 15px;
+    color: #1f7cde;
+    margin-bottom: 6px;
+    }
+
+    .skill-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 10px;
+    font-weight: 100;
+    color: #222;
+    margin-bottom: 6px;
+    }
+
+    .skill-description {
+    font-family: 'Roboto Slab', serif;
+    font-size: 10px;
+    color: #555;
+    line-height: 1;
+    }
+
+    #topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    bottom: 30px; /* Distance from bottom */
+    right: 30px; /* Distance from right */
+    z-index: 99; /* Stay on top */
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    #topBtn:hover {
+    background-color: #555;
+    }
+  </style>
+</head>
+
+<body class="w3-content" style="max-width:1300px">
+  <div class="content">
+    <!-- First Grid: Welcome & About -->
+    <div class="w3-row">
+      <div class="w3-half w3-black w3-container w3-center" style="height:800px;">
+        <div class="w3-padding-64">
+          <h1>Hello and Welcome To Amirun's Digital World!</h1>
+        </div>
+        <div class="w3-padding-64 menu-buttons">
+          <a href="#" class="w3-button w3-black w3-block w3-hover-blue-grey w3-padding-16">About Me</a>
+          <a href="#work" class="w3-button w3-black w3-block w3-hover-teal w3-padding-16">My Hobby</a>
+          <a href="#workexp" class="w3-button w3-black w3-block w3-hover-dark-grey w3-padding-16">Work Experience</a>
+          <a href="#edu" class="w3-button w3-black w3-block w3-hover-green w3-padding-16">Education</a>
+          <a href="#contact" class="w3-button w3-black w3-block w3-hover-brown w3-padding-16">Contact</a>
+        </div>
+      </div>
+      <div class="w3-half w3-blue-grey w3-container" style="overflow-y:auto;">
+        <div class="w3-padding-64 w3-center about-section">
+          <h1>About Me</h1>
+          <p>AMIRUN IMRAN BIN ISMAIL JAH</p>
+          <img src="mirunpic1.jpg" class="w3-margin w3-circle" alt="Person" style="width:35.3%;">
+          <div class="w3-left-align w3-padding-large">
+            <p>Hi there! I’m Amirun Imran Bin Ismail Jah — born on 9th May 2004 (I’m 21). I live in Kuala Lumpur, where the food’s fire and the traffic’s real. I’m the second of five siblings (3 boys, 2 girls)—so I get the best of both worlds: not too bossy, not too pampered, just right!</p>
+            <p>Thanks for visiting my amazing and awesome self site! or maybe my assignment site... ANYWAY! Dive in to explore my background, hobbies, education, and work experience. Enjoy the ride—I tried to keep things informative and fun. 😄</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Second Grid: Hobby & Work Experience -->
+    <div class="w3-row">
+      <div id="work" class="w3-half w3-teal w3-center hobby-section" style="min-height:800px;">
+        <div class="w3-padding-64">
+          <h2>My Hobby</h2>
+          <p>I enjoy playing sports — football, hiking, running, you name it!</p>
+          <p>Sports have always been a big part of my life. From the thrill of a fast-paced football match, to the patience and precision required in a round of golf, I love staying active and pushing my physical limits. These activities don’t just keep me fit, but also help me build discipline, teamwork, and mental resilience. Sports keeps me energized and balanced in all areas of life.</p>
+        </div>
+        <div class="w3-row">
+          <div class="w3-half"><img src="hobby1.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+          <div class="w3-half"><img src="hobby2.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+        </div>
+        <div class="w3-row w3-hide-small">
+          <div class="w3-half"><img src="hobby3.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+          <div class="w3-half"><img src="hobby4.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+        </div>
+        <div class="w3-row w3-hide-small">
+          <div class="w3-half"><img src="hobby5.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+          <div class="w3-half"><img src="hobby6.jpg" style="width:70%;cursor:pointer" onclick="openLightbox(this.src)"></div>
+        </div>
+        <p class="w3-margin-top">Click the picture and just call me awesome.</p>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+      </div>
+      <script>
+        function openLightbox(src) {
+          document.getElementById('lightbox').style.display = 'block';
+          document.getElementById('lightbox-img').src = src;
+        }
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+        }
+      </script>
+
+      <div id="workexp" class="w3-half w3-indigo w3-container work-section" style="min-height:800px;">
+        <div class="w3-padding-64 w3-center">
+          <h2>Work Experience</h2>
+          <div class="w3-responsive">
+            <table class="w3-table w3-white w3-bordered">
+              <tr><th>Year</th><th>Job</th><th>Where</th></tr>
+              <tr><td>2021–2022</td><td>Hectic/Catering</td><td>Aloft Hotel, KL</td></tr>
+              <tr><td>2022–2023</td><td>Sales Assistance</td><td>Sports Direct, Bangsar Village 3</td></tr>
+              <tr><td>Feb–Apr 2025</td><td>Internship – Admin & Promoter Supervisor</td><td>BRG Marketing, Kota Damansara</td></tr>
+              <tr><td>Current</td><td>Food Delivery Rider</td><td>GrabFood</td></tr>
+            </table>
+          </div>
+          <div class="w3-row w3-margin-top w3-center">
+            <div class="w3-quarter w3-padding"><img src="work1.jpg" style="width:100%" alt="Aloft"><p class="w3-text-white">worked as Catering Staff at Aloft Hotel</p></div>
+            <div class="w3-quarter w3-padding"><img src="work2.jpg" style="width:100%" alt="Sports Direct"><p class="w3-text-white">worked as Sports Direct Staff</p></div>
+            <div class="w3-quarter w3-padding"><img src="work3.jpg" style="width:100%" alt="BRG Marketing"><p class="w3-text-white">Internship at BRG Marketing</p></div>
+            <div class="w3-quarter w3-padding"><img src="work4.jpg" style="width:100%" alt="GrabFood"><p class="w3-text-white">Part-Time job as GrabFood Rider</p></div>
+          </div>
+          <section class="skills-section" id="skills">
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-language"></i></div>
+                <div class="skill-title">Multilingual Communication</div>
+                <div class="skill-description">Fluent in English, Malay, and Chinese — able to communicate clearly with diverse audiences.</div>
+              </div>
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-store"></i></div>
+                <div class="skill-title">Customer Service & Sales</div>
+                <div class="skill-description">Experienced at Sports Direct and as a Promoter Supervisor, skilled in engaging customers and product presentation.</div>
+              </div>
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-utensils"></i></div>
+                <div class="skill-title">Hospitality & Events</div>
+                <div class="skill-description">Worked in catering at Aloft Hotel, ensuring quality service during events and hotel functions.</div>
+              </div>
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-broadcast-tower"></i></div>
+                <div class="skill-title">Live Broadcasting Admin</div>
+                <div class="skill-description">Interned in live broadcasting support, helping with scheduling, communication, and production needs.</div>
+              </div>
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-motorcycle"></i></div>
+                <div class="skill-title">Time Management</div>
+                <div class="skill-description">GrabFood part-timer with strong punctuality, focus, and task ownership for daily deliveries.</div>
+              </div>
+
+              <div class="skill-card w3-half">
+                <div class="skill-icon"><i class="fas fa-user-cog"></i></div>
+                <div class="skill-title">Leadership & Supervision</div>
+                <div class="skill-description">Promoter supervisor with experience in team coordination and performance tracking.</div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Grid: Education & Contact -->
+    <div class="w3-row" id="contact">
+      <div id="edu" class="w3-half w3-dark-grey w3-container w3-center education-section" style="min-height:800px;">
+        <div class="w3-padding-64">
+          <h1>Education</h1>
+          <div class="w3-responsive">
+            <table class="w3-table w3-bordered w3-white">
+              <tr><th>Year</th><th>School</th><th>Achievement</th></tr>
+              <tr><td>2011–2016</td><td>SJK (C) Kuen Cheng 2</td><td>UPSR</td></tr>
+              <tr><td>2017–2022</td><td>SMK Bukit Bandaraya</td><td>SPM (4A 3B 1D)</td></tr>
+              <tr><td>2023–2025(current)</td><td>UiTM Rembau</td><td>CGPA 3.60 (1 Dean’s List)</td></tr>
+            </table>
+          </div>
+          <div class="w3-row w3-margin-top">
+            <div class="w3-quarter w3-padding"><img src="sch1.jpg" style="width:100%"><p class="w3-text-white">SJK(C) Kuen Cheng 2</p></div>
+            <div class="w3-quarter w3-padding"><img src="sch2.jpg" style="width:100%"><p class="w3-text-white">SMK Bukit Bandaraya</p></div>
+            <div class="w3-quarter w3-padding"><img src="sch3.jpg" style="width:100%"><p class="w3-text-white">Diploma in Information Management (UiTM Rembau)</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-half w3-teal w3-container contact-section" style="min-height:800px;">
+        <div class="w3-padding-64 w3-padding-large">
+          <h1>Contact</h1>
+          <p class="w3-opacity">LET'S GET IN TOUCH !!</p>
+          <div class="w3-row w3-padding-32">
+            <div class="w3-col m12 w3-large w3-margin-bottom">
+              <p><i class="fa-solid fa-location-dot" style="width:50px;"></i> Kuala Lumpur, Malaysia</p>
+              <p><i class="fa-brands fa-whatsapp" style="width:50px;"></i> <a href="https://wa.me/60128831536" target="_blank" class="w3-text-white">+60 12‑883 1536</a></p>
+              <p><i class="fa-solid fa-envelope" style="width:50px;"></i> <a href="mailto:amirunimranismailjah@gmail.com" class="w3-text-white">amirunimranismailjah@gmail.com</a></p>
+              <p><i class="fa-brands fa-instagram" style="width:50px;"></i> <a href="https://instagram.com/amrnisml" target="_blank" class="w3-text-white">@amrnisml</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container">
+    <p><strong>Made By</strong></p>
+    <p>AMIRUN IMRAN BIN ISMAIL JAH (2023147865)</p>
+    <p>N5CDIM1105A</p>
+  </footer>
+
+    <button onclick="topFunction()" id="topBtn" title="Go To Top">⬆️ Top</button>
+
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      const btn = document.getElementById("topBtn");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+  </body>
+  </html>
